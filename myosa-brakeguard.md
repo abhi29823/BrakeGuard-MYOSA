@@ -2,7 +2,7 @@
 publishDate: 2026-08-25
 title: BrakeGuard - A Continuous IoT-Based Capacitive Brake Fluid Moisture Health Monitoring System
 excerpt: BrakeGuard is a low-cost embedded safety system that monitors brake fluid moisture and braking conditions to identify brake-fluid degradation and provide an early indication of brake fade risk.
-image: cover-image.jpg
+image: image1.jpg
 tags:
   - smart-sensing
   - condition-monitoring
@@ -39,7 +39,7 @@ The project demonstrates a low-cost approach to condition-based brake-fluid moni
 ### Images
 
 <p align="center">
-  <img src="cover-image.jpg" width="800"><br/>
+  <img src="image1.jpg" width="800"><br/>
   <i>BrakeGuard - Complete system overview</i>
 </p>
 
