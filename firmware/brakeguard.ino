@@ -1,39 +1,5 @@
-/*
-  BrakeGuard Firmware — MYOSA 6.0 (MYOSA-native version)
-  ---------------------------------------------------------------------------
-  Rewritten to use the official myosa.h library (from
-  github.com/myosa-sensors/arduino-libraries) instead of generic Adafruit
-  libraries, since myosa.h is purpose-built for this exact board's wiring,
-  I2C addresses, and OLED font/logo assets.
 
-  IMPORTANT — verify before relying on this:
-  - Confirmed against the actual myosa.h / AccelAndGyro.h / BarometricPressure.h
-    / oled.h / Actuator.h source on GitHub, so function names and I2C
-    addresses below are accurate as of the version fetched. Libraries can be
-    updated by MYOSA after this was written — if something doesn't match,
-    re-check the source.
-  - Still NOT compiled in a real toolchain in this environment. Verify/Compile
-    in Arduino IDE before uploading, and fix any small mismatches.
-  - All calibration constants are PLACEHOLDERS (marked TODO).
-
-  BUZZER NOTE (read this):
-  myosa.h's turnOnBuzzer()/turnOffBuzzer() control a buzzer wired through a
-  separate I2C "Actuator" board (PCA9536 GPIO expander, I2C address 0x41).
-  If your physical buzzer is the bare 3-pin (GND/5V/SIG) module from your kit
-  photos rather than that I2C Actuator board, myosa's buzzer functions will
-  silently do nothing. This firmware defaults to DIRECT GPIO control of the
-  buzzer instead. If you do have/get the real Actuator board, an alternate
-  code path is included below, commented out — search for "ACTUATOR BOARD".
-
-  Libraries required (Arduino Library Manager / manual install):
-    - myosa (download ZIP from github.com/myosa-sensors/arduino-libraries,
-      copy ALL subfolders into Documents/Arduino/libraries — this pulls in
-      AccelAndGyro, BarometricPressure, OLED, Actuator, AirQuality,
-      LightProximityAndGesture, TempAndHumidity as dependencies of myosa.h)
-    - PubSubClient (MQTT) — install via Library Manager
-  Board: ESP32 (Tools > Board > esp32 > ESP32 Dev Module, or your exact entry)
-  ---------------------------------------------------------------------------
-*/
+//BrakeGuard Firmware — MYOSA 6.0 (MYOSA-native version)
 
 #include <myosa.h>
 #include <WiFi.h>
@@ -48,22 +14,20 @@ MYOSA myosa;
 // ---- Feature toggles -------------------------------------------------------
 #define SIMULATE_PROBE          0   // 1 = fake capacitance data (no probe wired yet)
 #define ENABLE_WIFI_MQTT        0   // set 0 to skip WiFi/MQTT for bench testing
-#define ENABLE_BLE_APP          0   // myosa.begin() starts BLE server regardless;
-                                     // this flag only controls whether we also call
-                                     // myosa.sendBleData() each cycle
+#define ENABLE_BLE_APP          0   // myosa.begin() starts BLE server regardless;                
 
 // ---- Buzzer: direct GPIO (see BUZZER NOTE above) ----------------------------
-#define BUZZER_PIN    4     // TODO: set to whatever GPIO you actually wired the
-                             // buzzer SIG line to
+#define BUZZER_PIN    4     
+                            
 
 // ---- Capacitive probe RC circuit pins — PLACEHOLDERS until probe hardware exists.
 #define PROBE_CHARGE_PIN   25
 #define PROBE_READ_PIN     26
 
 // ---- WiFi / MQTT config -------------------------------------------------------
-const char* WIFI_SSID     = "YOUR_WIFI_SSID";       // TODO
-const char* WIFI_PASSWORD = "YOUR_WIFI_PASSWORD";   // TODO
-const char* MQTT_BROKER   = "broker.hivemq.com";    // TODO: swap for your broker
+const char* WIFI_SSID     = "YOUR_WIFI_SSID";       
+const char* WIFI_PASSWORD = "YOUR_WIFI_PASSWORD";   
+const char* MQTT_BROKER   = "broker.hivemq.com"; 
 const int   MQTT_PORT     = 1883;
 const char* MQTT_CLIENT_ID = "BrakeGuard_ESP32";
 const char* MQTT_TOPIC_STATE = "brakeguard/state";
