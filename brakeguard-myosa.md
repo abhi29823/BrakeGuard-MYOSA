@@ -37,7 +37,7 @@ The project demonstrates a low-cost approach to condition-based brake-fluid moni
 ### Images
 
 <p align="center">
-  <img src="/assets/images/brakeguard/cover-image.jpg" width="800"><br/>
+  <img src="cover-image.jpg" width="800"><br/>
   <i>BrakeGuard - Complete system overview</i>
 </p>
 
