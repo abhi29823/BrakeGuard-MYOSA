@@ -43,6 +43,11 @@ The project demonstrates a low-cost approach to condition-based brake-fluid moni
   <i>BrakeGuard - Complete system overview</i>
 </p>
 
+<p align="center">
+  <img src="image2.jpg" width="800"><br/>
+  <i>BrakeGuard - System in action</i>
+</p>
+
 <!-- Add more images here when available -->
 
 ### Videos
