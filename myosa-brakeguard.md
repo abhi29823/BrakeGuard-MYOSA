@@ -68,6 +68,11 @@ BrakeGuard uses a custom parallel-plate capacitive sensing unit to monitor chang
 
 As the dielectric properties of the fluid change with increasing moisture content, the effective capacitance of the sensing unit changes. This electrical variation provides the primary sensing signal used by BrakeGuard.
 
+<p align="center">
+  <img src="feature1.jpg" width="800"><br/>
+  <i>BrakeGuard capacitive sensing prototype</i>
+</p>
+
 ### 2. RC-Based Capacitance Measurement
 
 The sensing unit is interfaced with the ESP32 through an RC charge-time measurement circuit. Instead of requiring a dedicated capacitance-measurement IC, the system measures how quickly the sensing circuit charges towards a defined voltage level.
@@ -117,11 +122,6 @@ The core safety indication therefore does not depend on a computer, cloud servic
 BrakeGuard can transmit sensor readings, braking data, risk index, and system status over Wi-Fi using MQTT. This enables remote monitoring and long-term tracking of brake-fluid condition, supporting a shift from periodic inspection towards condition-based maintenance.
 
 This creates the foundation for moving from periodic inspection towards condition-based maintenance, where changes in brake-fluid condition can be observed over time rather than only during scheduled servicing.
-
-<p align="center">
-  <img src="feature1.jpg" width="800"><br/>
-  <i>BrakeGuard prototype overview</i>
-</p>
 
 ---
 
