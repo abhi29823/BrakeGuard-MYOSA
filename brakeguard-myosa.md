@@ -24,6 +24,8 @@ This project was developed using the MYOSA Mini Kit and its sensor ecosystem as 
 
 Brake fluid is a critical yet often overlooked part of a vehicle's braking system. Glycol-based brake fluids such as DOT 3, DOT 4, and DOT 5.1 gradually absorb moisture from their surroundings. As moisture increases, the fluid's boiling point decreases and the risk of thermal degradation and internal corrosion increases. Despite this continuous degradation, brake-fluid condition is typically assessed only during periodic maintenance, providing no continuous view of how the fluid is changing between service intervals.
 
+BrakeGuard is designed for vehicle owners, automotive technicians, and safety-conscious drivers who want continuous visibility into their brake-fluid condition. It is especially valuable for performance vehicles, commercial fleets, and regions with high humidity where brake-fluid degradation accelerates.
+
 BrakeGuard addresses this gap by converting brake-fluid condition into a continuously monitored safety parameter. A capacitive sensing unit detects changes in the electrical properties of the fluid associated with moisture contamination, while the ESP32-based MYOSA Mini Kit processes the measurement alongside braking-event data from the MPU6050 and environmental data from the BMP180.
 
 Instead of reporting moisture content alone, BrakeGuard combines these measurements and evaluates them against experimentally established thresholds to generate a Brake Fade Risk Index. The resulting status is presented locally through the MYOSA OLED and can also be transmitted for remote monitoring and trend analysis.
