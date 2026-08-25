@@ -53,7 +53,7 @@ The project demonstrates a low-cost approach to condition-based brake-fluid moni
 ### Videos
 
 <video controls width="100%">
-  <source src="demo-video.mp4" type="video/mp4">
+  <source src="myosa-demovid.mp4" type="video/mp4">
 </video>
 
 <!-- Video will be added when available -->
@@ -181,9 +181,10 @@ WiFi.h
 
 ```
 /brakeguard-myosa
-├─ brakeguard-myosa.md
-├─ cover-image.jpg
-├─ demo-video.mp4
+├─ myosa-brakeguard.md
+├─ image1.jpg
+├─ image2.jpg
+├─ myosa-demovid.mp4
 └─ firmware/
     └─ brakeguard.ino
 ```
